@@ -2,6 +2,7 @@ package cl.jav.pokemonesmvvm
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import cl.jav.pokemonesmvvm.databinding.ActivityMainBinding
 
 /*
 Requisitos
@@ -9,9 +10,9 @@ Requisitos
 2.[x] POJOs (1 min) copiar pegar
 3.[] Recycleview
 4.[creado pero falta por terminar] Adapter
-5.[] Uso de ViewBinding(gradle)
-6.[] Layout (activity
-7.[] Activar permisos(internet).
+5.[X] Uso de ViewBinding(gradle)
+6.[X] Layout (activity
+7.[X] Activar permisos(internet).
 8.[] Room (pojo, dao, dataBase).
 9.[maneja datos] Repositorio
 10.[realizado pero aun no funciona] ViewModel
@@ -28,14 +29,17 @@ Requisitos
 [] Room
 [] kotlin-kapt
 [] Livedata
-
-
-
 */
 
 class MainActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        val binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.fl_pokemon, ListFragment
+                .newInstance("", "")).addToBackStack("Volver").commit()
+
     }
 }

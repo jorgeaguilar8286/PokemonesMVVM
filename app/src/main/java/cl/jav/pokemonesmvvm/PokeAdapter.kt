@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import cl.jav.pokemonesmvvm.databinding.ItemListPokemonBinding
 
 class PokeAdapter: RecyclerView.Adapter<PokeAdapter.PokeVH>() {
-    private val pokeList:List<Pokemon>?=null
+    private val pokeList:MutableList<Pokemon>?=null
     class PokeVH(itemView:ItemListPokemonBinding): RecyclerView.ViewHolder(itemView.root) {
         val pokename:TextView=itemView.tvNombre
 
@@ -27,5 +27,12 @@ class PokeAdapter: RecyclerView.Adapter<PokeAdapter.PokeVH>() {
 
     override fun getItemCount(): Int {
         return pokeList?.size ?:0
+    }
+
+    fun updateList(pokeListUpdate: List<Pokemon>) {
+        pokeList?.clear()
+        pokeList?.addAll(pokeListUpdate)
+        notifyDataSetChanged()
+
     }
 }
