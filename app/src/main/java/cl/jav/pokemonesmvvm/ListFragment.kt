@@ -24,7 +24,7 @@ private const val ARG_PARAM2 = "param2"
 private lateinit var adapter: PokeAdapter
 private lateinit var pokeVM: PokeVM
 lateinit var binding: FragmentListBinding
-class ListFragment : Fragment() {
+class ListFragment : Fragment(), OnItemClickListener {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -45,7 +45,7 @@ class ListFragment : Fragment() {
         // Inflate the layout for this fragment
         pokeVM = PokeVM()
         var pokeList = pokeVM.getPokemones()
-        adapter = PokeAdapter()
+        adapter = PokeAdapter(this)
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
         val recyclerView = binding.rvLista
         recyclerView.adapter = adapter
@@ -74,4 +74,12 @@ class ListFragment : Fragment() {
                 }
             }
     }
+
+    override fun onClick(id:String) {
+     //   Log.d("prueba", "onClick: $id")
+        activity?.supportFragmentManager?.beginTransaction()
+            ?.replace(R.id.fl_pokemon,DetailFragment.newInstance(id))?.addToBackStack("volver")?.commit()
+           }
+
+
 }
