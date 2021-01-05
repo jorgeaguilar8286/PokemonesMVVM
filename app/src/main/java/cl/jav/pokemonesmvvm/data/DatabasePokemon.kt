@@ -3,7 +3,8 @@ package cl.jav.pokemonesmvvm.data
 import android.app.Application
 import androidx.room.*
 import androidx.room.Room.databaseBuilder
-import cl.jav.pokemonesmvvm.Converter
+
+import cl.jav.pokemonesmvvm.Converters
 import cl.jav.pokemonesmvvm.Pokemon
 
 @Dao
@@ -23,7 +24,7 @@ interface DaoPokemon {
 
 }
 @Database(entities= [Pokemon::class],version=1)
-@TypeConverters(Converter::class)
+@TypeConverters(Converters::class)
 abstract class PokeDatabase : RoomDatabase() {
  abstract fun daoPokemon(): DaoPokemon
 }

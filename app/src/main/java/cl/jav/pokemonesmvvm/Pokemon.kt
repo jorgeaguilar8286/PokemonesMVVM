@@ -14,7 +14,7 @@ data class Pokemon(
 )
 
 
-class Converter {
+class Converters {
     @TypeConverter
     fun convertStringtoList(lista: String): List<String> {
 
@@ -23,7 +23,7 @@ class Converter {
 
     @TypeConverter
     fun convertListtoString(lista: List<String>): String {
+        return lista.joinToString()
 
-        return lista.joinToString { "," }
     }
 }
