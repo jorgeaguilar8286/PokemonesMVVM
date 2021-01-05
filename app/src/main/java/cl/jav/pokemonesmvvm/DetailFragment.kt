@@ -22,14 +22,14 @@ private const val ARG_PARAM2 = "param2"
  */
 class DetailFragment : Fragment() {
 
-    private var param1: String? = null
+    private var param1 = ""
     private lateinit var binding:FragmentDetailBinding
     private val pokeVM: PokeVM by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
+            param1 = it.getString(ARG_PARAM1).toString()
 
         }
     }
