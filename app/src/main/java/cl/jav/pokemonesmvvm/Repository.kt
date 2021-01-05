@@ -9,5 +9,10 @@ class Repository {
 
     }
 
+    fun getPokemon(id: String?):Pokemon {
+
+        return pokedex.getPokemon(id)
+    }
+
 
 }

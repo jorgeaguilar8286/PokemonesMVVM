@@ -1,6 +1,5 @@
 package cl.jav.pokemonesmvvm
 
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 
 class PokeVM: ViewModel(){
@@ -9,4 +8,10 @@ class PokeVM: ViewModel(){
        return repository.cargarPokemones()
 
    }
+
+    fun getPokemon(id: String?):Pokemon {
+
+       return repository.getPokemon(id)
+
+    }
 }

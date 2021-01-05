@@ -22,8 +22,13 @@ class Pokedex {
         return listaTipos.distinct().sorted()
     }
 
+    fun getPokemon(id: String?):Pokemon {
 
-   private val pokelist: List<Pokemon>
+        return pokelist.filter { pokemon->pokemon.id.equals(id) }[0]
+    }
+
+
+    private val pokelist: List<Pokemon>
         get() {
             val pokelist: MutableList<Pokemon> = ArrayList<Pokemon>()
             pokelist.add(
