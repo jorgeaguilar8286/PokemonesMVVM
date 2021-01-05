@@ -8,24 +8,24 @@ import cl.jav.pokemonesmvvm.databinding.ActivityMainBinding
 Requisitos
 1.[x] traer pokedex desde algun proyecto.(1 min) copiar pegar
 2.[x] POJOs (1 min) copiar pegar
-3.[] Recycleview
-4.[creado pero falta por terminar] Adapter
+3.[X] Recycleview
+4.[X] Adapter
 5.[X] Uso de ViewBinding(gradle)
 6.[X] Layout (activity
 7.[X] Activar permisos(internet).
 8.[] Room (pojo, dao, dataBase).
 9.[maneja datos] Repositorio
-10.[realizado pero aun no funciona] ViewModel
-11.[] Fragmentos
- a. [inconclusa] list_fragment
- b. [] detail_fragment
+10.[X] ViewModel
+11.[X] Fragmentos
+ a. [X] list_fragment
+ b. [X] detail_fragment
 12.[] Glide
 
 
 ----Dependencias y plugin
 [] Glide
-[] ViewModel
-[] ViewBinding
+[X] ViewModel
+[X] ViewBinding
 [] Room
 [] kotlin-kapt
 [] Livedata

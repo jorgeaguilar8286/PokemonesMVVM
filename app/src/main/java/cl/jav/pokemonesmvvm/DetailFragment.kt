@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import cl.jav.pokemonesmvvm.databinding.FragmentDetailBinding
+import com.bumptech.glide.Glide
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -43,6 +44,7 @@ class DetailFragment : Fragment() {
         binding.tvId.text=pokemon.id
         binding.tvNamedetail.text=pokemon.name
         binding.tvTypes.text=pokemon.types.toString()
+        context?.let { Glide.with(it).load(pokemon.img).into(binding.ivPoke) }
 
         return binding.root
     }
