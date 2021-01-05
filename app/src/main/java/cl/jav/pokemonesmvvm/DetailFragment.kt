@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.viewModels
 import cl.jav.pokemonesmvvm.databinding.FragmentDetailBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -22,7 +23,7 @@ class DetailFragment : Fragment() {
 
     private var param1: String? = null
     private lateinit var binding:FragmentDetailBinding
-
+    private val pokeVM: PokeVM by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,8 +36,8 @@ class DetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate t layout for this fragment
-        val pokevm=PokeVM()
-        val pokemon=pokevm.getPokemon(param1)
+
+        val pokemon=pokeVM.getPokemon(param1)
         binding= FragmentDetailBinding.inflate(inflater,container,false)
         Log.d("nombre", "onCreateView: $param1")
         binding.tvId.text=pokemon.id
