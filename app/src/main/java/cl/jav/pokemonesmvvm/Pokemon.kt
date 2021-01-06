@@ -24,6 +24,6 @@ class Converter {
     @TypeConverter
     fun convertListtoString(lista: List<String>): String {
 
-        return lista.joinToString { "," }
+        return lista.joinToString ()
     }
 }
