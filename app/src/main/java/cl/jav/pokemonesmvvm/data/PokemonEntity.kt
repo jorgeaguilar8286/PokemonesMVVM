@@ -1,10 +1,10 @@
-package cl.jav.pokemonesmvvm
+package cl.jav.pokemonesmvvm.data
 
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 import androidx.room.TypeConverter
-
+//Entity
 @Entity(tableName = "pokemones")
 data class Pokemon(
     @PrimaryKey val id: String,

@@ -1,15 +1,15 @@
-package cl.jav.pokemonesmvvm
+package cl.jav.pokemonesmvvm.view
 
 
 import android.util.Log
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import cl.jav.pokemonesmvvm.data.Pokemon
 import cl.jav.pokemonesmvvm.databinding.ItemListPokemonBinding
 
-class PokeAdapter(pListener:OnItemClickListener) : RecyclerView.Adapter<PokeAdapter.PokeVH>() {
+class PokeAdapter(pListener: OnItemClickListener) : RecyclerView.Adapter<PokeAdapter.PokeVH>() {
     private val pokeList= mutableListOf<Pokemon>()
     private val listener=pListener
     class PokeVH(itemView: ItemListPokemonBinding): RecyclerView.ViewHolder(itemView.root) {
@@ -17,13 +17,13 @@ class PokeAdapter(pListener:OnItemClickListener) : RecyclerView.Adapter<PokeAdap
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokeAdapter.PokeVH {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PokeVH {
         val binding = ItemListPokemonBinding.inflate(LayoutInflater.from(parent.context),parent,false)
 
         return PokeVH(binding)
     }
 
-    override fun onBindViewHolder(holder:PokeVH, position: Int) {
+    override fun onBindViewHolder(holder: PokeVH, position: Int) {
         val pokemon=pokeList[position]
         holder.pokename.text=pokemon.name
         holder.pokename.setOnClickListener{

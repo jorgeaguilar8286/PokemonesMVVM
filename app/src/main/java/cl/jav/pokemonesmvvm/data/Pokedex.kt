@@ -1,4 +1,4 @@
-package cl.jav.pokemonesmvvm
+package cl.jav.pokemonesmvvm.data
 
 import java.util.*
 
@@ -22,7 +22,7 @@ class Pokedex {
         return listaTipos.distinct().sorted()
     }
 
-    fun getPokemon(id: String?):Pokemon {
+    fun getPokemon(id: String?): Pokemon {
 
         return pokelist.filter { pokemon->pokemon.id.equals(id) }[0]
     }

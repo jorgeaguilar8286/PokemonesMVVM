@@ -1,7 +1,9 @@
-package cl.jav.pokemonesmvvm
+package cl.jav.pokemonesmvvm.viewmodel
 
 
 import androidx.lifecycle.ViewModel
+import cl.jav.pokemonesmvvm.data.Pokemon
+import cl.jav.pokemonesmvvm.data.Repository
 
 class PokeVM : ViewModel(){
 
@@ -13,7 +15,7 @@ class PokeVM : ViewModel(){
 
    }
 
-    fun getPokemon(id: String):Pokemon {
+    fun getPokemon(id: String): Pokemon {
 
        return repository.getPokemon(id)
 

@@ -1,12 +1,15 @@
-package cl.jav.pokemonesmvvm
+package cl.jav.pokemonesmvvm.data
 
 import android.util.Log
-import cl.jav.pokemonesmvvm.data.RoomApplication
+import cl.jav.pokemonesmvvm.data.Pokedex
+import cl.jav.pokemonesmvvm.data.Pokemon
+
 
 class Repository {
 
     val pokedex = Pokedex()
-    val pokeDatabase = RoomApplication.pokeDatabase!!
+    val pokeDatabase = PokeDatabase.RoomApplication.pokeDatabase!!
+
 
     init {
         loadPokedex()

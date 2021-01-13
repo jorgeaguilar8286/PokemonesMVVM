@@ -1,4 +1,4 @@
-package cl.jav.pokemonesmvvm
+package cl.jav.pokemonesmvvm.view
 
 
 

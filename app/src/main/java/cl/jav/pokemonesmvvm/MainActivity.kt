@@ -3,6 +3,7 @@ package cl.jav.pokemonesmvvm
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import cl.jav.pokemonesmvvm.databinding.ActivityMainBinding
+import cl.jav.pokemonesmvvm.view.ListFragment
 
 /*
 Requisitos

@@ -1,4 +1,4 @@
-package cl.jav.pokemonesmvvm
+package cl.jav.pokemonesmvvm.view
 
 import android.os.Bundle
 import android.util.Log
@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
+import cl.jav.pokemonesmvvm.viewmodel.PokeVM
 import cl.jav.pokemonesmvvm.databinding.FragmentDetailBinding
 import com.bumptech.glide.Glide
 

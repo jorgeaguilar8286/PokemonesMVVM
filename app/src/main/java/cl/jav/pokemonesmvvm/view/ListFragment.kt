@@ -1,4 +1,4 @@
-package cl.jav.pokemonesmvvm
+package cl.jav.pokemonesmvvm.view
 
 import android.os.Bundle
 import android.util.Log
@@ -8,7 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
-import cl.jav.pokemonesmvvm.databinding.ActivityMainBinding
+import cl.jav.pokemonesmvvm.viewmodel.PokeVM
+import cl.jav.pokemonesmvvm.R
 import cl.jav.pokemonesmvvm.databinding.FragmentListBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -82,7 +83,7 @@ class ListFragment : Fragment(), OnItemClickListener {
     override fun onClick(id:String) {
      //   Log.d("prueba", "onClick: $id")
         activity?.supportFragmentManager?.beginTransaction()
-            ?.replace(R.id.fl_pokemon,DetailFragment.newInstance(id))?.addToBackStack("volver")?.commit()
+            ?.replace(R.id.fl_pokemon, DetailFragment.newInstance(id))?.addToBackStack("volver")?.commit()
            }
 
 
