@@ -1,5 +1,6 @@
 package cl.jav.pokemonesmvvm.view
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -10,6 +11,7 @@ import androidx.fragment.app.viewModels
 import cl.jav.pokemonesmvvm.viewmodel.PokeVM
 import cl.jav.pokemonesmvvm.databinding.FragmentDetailBinding
 import com.bumptech.glide.Glide
+import com.google.android.material.snackbar.Snackbar
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -38,7 +40,7 @@ class DetailFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         // Inflate t layout for this fragment
-
+        binding= FragmentDetailBinding.inflate(inflater,container,false)
         pokeVM.getPokemon(param1).observe(viewLifecycleOwner, {pokemon ->
             binding.tvId.text= pokemon.id
             binding.tvNamedetail.text= pokemon.name
@@ -46,7 +48,14 @@ class DetailFragment : Fragment() {
             context?.let {
                 Glide.with(it).load(pokemon.img).into(binding.ivPoke) }
         })
-        binding= FragmentDetailBinding.inflate(inflater,container,false)
+        binding.fabShare.setOnClickListener {
+            //view -> Snackbar.make(view, "Compartir el pokemon", Snackbar.LENGTH_LONG).setAction("Estás seguro?", this).show()
+            val intent = Intent(Intent.ACTION_SEND)
+            intent.type = "text/plain"
+            intent.putExtra(Intent.EXTRA_TEXT, "${binding.tvNamedetail.text}")
+            startActivity(intent)
+        }
+
         Log.d("nombre", "onCreateView: $param1")
 
 

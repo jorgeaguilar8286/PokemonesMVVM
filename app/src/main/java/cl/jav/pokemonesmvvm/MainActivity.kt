@@ -23,7 +23,7 @@ Requisitos
 12.[X] Glide
 13.[ ] Fragment
 14.[ ] Intent implicito
-15.[ ] Alcances funciones coroutines
+15.[ ] Alcances funciones coroutines -> let, apply, run
 16.[ ] Cambiar monstruitos para coroutines
 
 
