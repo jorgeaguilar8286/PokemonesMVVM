@@ -15,14 +15,16 @@ Requisitos
 6.[X] Layout (activity
 7.[X] Activar permisos(internet).
 8.[X] Room (pojo, dao, dataBase).
-9.[maneja datos] Repositorio
+9.[X] Maneja datos Repositorio
 10.[X] ViewModel
 11.[X] Fragmentos
  a. [X] list_fragment
  b. [X] detail_fragment
 12.[X] Glide
-13.[ ] Fragment
-14.[ ] Intent implicito
+13.[X] Intent implicito
+
+APP Monstruos
+14.[ ] Fragment
 15.[ ] Alcances funciones coroutines -> let, apply, run
 16.[ ] Cambiar monstruitos para coroutines
 
