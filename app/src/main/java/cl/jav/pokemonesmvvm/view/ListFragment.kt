@@ -48,15 +48,15 @@ class ListFragment : Fragment(), OnItemClickListener {
     ): View? {
 
         // Inflate the layout for this fragment
-
-        var pokeList = pokeVM.getPokemones()
         adapter = PokeAdapter(this)
         binding = FragmentListBinding.inflate(layoutInflater, container, false)
         val recyclerView = binding.rvLista
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this.context)
-        Log.d("ListFragment", "onCreateView: la lista tiene ${pokeList.size} elementos")
-        adapter.updateList(pokeList)
+        pokeVM.getPokemones().observe(viewLifecycleOwner, {
+            Log.d("ListFragment", "onCreateView: la lista tiene ${it.size} elementos")
+            adapter.updateList(it)
+        })
         return binding.root
     }
 

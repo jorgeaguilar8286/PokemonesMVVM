@@ -24,7 +24,7 @@ abstract class PokeDatabase : RoomDatabase() {
             super.onCreate()
 
             pokeDatabase = Room.databaseBuilder(this, PokeDatabase::class.java,
-                    "pokemones").allowMainThreadQueries().build()
+                    "pokemones").build()
         }
     }
 }

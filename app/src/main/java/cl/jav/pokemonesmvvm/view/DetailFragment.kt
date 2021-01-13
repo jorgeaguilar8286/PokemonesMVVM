@@ -39,13 +39,16 @@ class DetailFragment : Fragment() {
                               savedInstanceState: Bundle?): View? {
         // Inflate t layout for this fragment
 
-        val pokemon=pokeVM.getPokemon(param1)
+        pokeVM.getPokemon(param1).observe(viewLifecycleOwner, {pokemon ->
+            binding.tvId.text= pokemon.id
+            binding.tvNamedetail.text= pokemon.name
+            binding.tvTypes.text= pokemon.types.toString()
+            context?.let {
+                Glide.with(it).load(pokemon.img).into(binding.ivPoke) }
+        })
         binding= FragmentDetailBinding.inflate(inflater,container,false)
         Log.d("nombre", "onCreateView: $param1")
-        binding.tvId.text=pokemon.id
-        binding.tvNamedetail.text=pokemon.name
-        binding.tvTypes.text=pokemon.types.toString()
-        context?.let { Glide.with(it).load(pokemon.img).into(binding.ivPoke) }
+
 
         return binding.root
     }
