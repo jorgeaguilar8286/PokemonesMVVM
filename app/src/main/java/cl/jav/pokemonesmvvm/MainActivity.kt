@@ -14,22 +14,26 @@ Requisitos
 5.[X] Uso de ViewBinding(gradle)
 6.[X] Layout (activity
 7.[X] Activar permisos(internet).
-8.[] Room (pojo, dao, dataBase).
+8.[X] Room (pojo, dao, dataBase).
 9.[maneja datos] Repositorio
 10.[X] ViewModel
 11.[X] Fragmentos
  a. [X] list_fragment
  b. [X] detail_fragment
-12.[] Glide
+12.[X] Glide
+13.[ ] Fragment
+14.[ ] Intent implicito
+15.[ ] Alcances funciones coroutines
+16.[ ] Cambiar monstruitos para coroutines
 
 
 ----Dependencias y plugin
 [] Glide
 [X] ViewModel
 [X] ViewBinding
-[] Room
-[] kotlin-kapt
-[] Livedata
+[X] Room
+[X] kotlin-kapt
+[X] Livedata
 */
 
 class MainActivity : AppCompatActivity() {
